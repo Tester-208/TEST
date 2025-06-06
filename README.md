@@ -1433,7 +1433,7 @@ window.__vite_plugin_react_preamble_installed__ = true
             }, 10);
             
             // Exemple de contenu dynamique (à remplacer par du contenu réel)
-            ficheZoom.className = "fixed top-[5%] left-[5%] w-[90%] h-[90%] bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl p-10 z-50 transition-all duration-500 ease-in-out opacity-0 scale-95 pointer-events-none transform-gpu";
+              ficheZoom.className = `fixed top-[5%] left-[5%] w-[90%] h-[90%] ${creche.ficheBg || 'bg-white/95'} backdrop-blur-md rounded-2xl shadow-2xl p-10 z-50 transition-all duration-500 ease-in-out opacity-0 scale-95 pointer-events-none transform-gpu`;
             ficheZoom.style.backgroundImage = '';
             ficheZoom.style.backgroundSize = '';
             ficheZoom.style.backgroundPosition = '';
@@ -1901,7 +1901,7 @@ window.__vite_plugin_react_preamble_installed__ = true
           crechesCardGroup.innerHTML = ''; // Vider le contenu existant
           crechesData.forEach(creche => {
             const cardDiv = document.createElement('div');
-            cardDiv.className = `card flex-1 ${creche.couleurBg.replace('bg-', 'bg-') || 'bg-gray-300'} rounded-xl shadow-lg flex items-center justify-center cursor-pointer hover:shadow-xl transition-all duration-500 p-4 text-center overflow-hidden transform hover:scale-110 hover:-translate-y-2 hover:z-10 relative`;
+            cardDiv.className = `card flex-1 ${creche.couleurBg || 'bg-gray-300'} rounded-xl shadow-lg flex items-center justify-center cursor-pointer hover:shadow-xl transition-all duration-500 p-4 text-center overflow-hidden transform hover:scale-110 hover:-translate-y-2 hover:z-10 relative`;
             cardDiv.setAttribute('onclick', `handleOpenDetailView('${creche.id}', '${creche.couleurBg}')`);
             
             cardDiv.innerHTML = `
